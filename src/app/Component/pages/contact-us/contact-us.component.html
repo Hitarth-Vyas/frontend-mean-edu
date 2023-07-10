@@ -1,0 +1,156 @@
+<app-header></app-header>
+<img
+  src="../../../../assets/contact_us/contact-banner.jpg"
+  alt=""
+  class="w-100"
+/>
+
+<section class="section contact" style="background-color: rgb(249, 249, 254)">
+  <div class="row gy-4">
+    <div class="col-md-5 m-auto">
+      <div class="">
+        <!-- <div class="col-lg-6">
+          <div class="info-box card">
+            <i class="bi bi-geo-alt"></i>
+            <h3>Address</h3>
+            <p>A108 Adam Street,<br />New York, NY 535022</p>
+          </div>
+        </div> -->
+        <!-- <div class="col-lg-1"></div> -->
+        <div class="">
+          <div class="info-box card p-aut0 mx-auto">
+            <i class="bi bi-whatsapp"></i>
+            <h3>Talk On</h3>
+            <p>
+              <a
+                href="https://wa.me/7412879735"
+                style="color: black; text-decoration: none"
+                target="_blank"
+                >https://wa.me/7412879735</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="">
+          <div class="info-box card mx-auto">
+            <i class="bi bi-envelope"></i>
+            <h3>Email Us</h3>
+            <p>thevedaverse77@gmail.com</p>
+          </div>
+        </div>
+        <!-- <div class="col-lg-6">
+          <div class="info-box card">
+            <i class="bi bi-clock"></i>
+            <h3>Open Hours</h3>
+            <p>Monday - Friday<br />9:00AM - 05:00PM</p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div
+        class="card p-4 mt-1"
+        style="width: 95%; height: 95%; background-color: f9fffa"
+      >
+        <div class="row gy-4">
+          <form
+            [formGroup]="contactForm"
+            (ngSubmit)="onSubmit(contactForm.value)"
+          >
+            <div class="col-md-12 form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Name"
+                formControlName="name"
+                [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+              />
+              <label for="name">Name</label>
+
+              <div
+                *ngIf="submitted && f['name'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['name'].errors['required']">name is required</div>
+              </div>
+            </div>
+
+            <div class="col-md-12 form-floating mb-3">
+              <input
+                type="email"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Email Address"
+                formControlName="email"
+              />
+              <label for="floatingInput">Email address</label>
+            </div>
+
+            <div class="col-md-12 form-floating mb-3">
+              <input
+                type="tel"
+                class="form-control"
+                id="pnum"
+                placeholder="Phone Number"
+                formControlName="phoneNumber"
+                [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }"
+              />
+              <label for="pnum">Phone Number</label>
+              <div
+                *ngIf="submitted && f.phoneNumber.errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f.phoneNumber.errors['required']">
+                  Phone number is required
+                </div>
+                <div
+                  *ngIf="
+                    f.phoneNumber.errors['minlength'] ||
+                    f.phoneNumber.errors['maxlength'] ||
+                    f.phoneNumber.errors['pattern']
+                  "
+                >
+                  Phone number must be 10 numbers
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 form-floating mb-3">
+              <input
+                type="textarea"
+                row="5"
+                class="form-control"
+                id="msg"
+                placeholder="Message"
+                formControlName="message"
+                [ngClass]="{ 'is-invalid': submitted && f.message.errors }"
+              />
+              <label for="message">Message</label>
+              <div
+                *ngIf="submitted && f.message.errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f.message.errors['required']">
+                  Please Enter Some Message
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <button
+                type="submit"
+                class="btn rounded-pill"
+                style="background-color: black; color: white"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

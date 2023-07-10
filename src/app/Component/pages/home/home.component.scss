@@ -1,0 +1,29 @@
+@media screen and (min-width: 600px) {
+  .odd {
+    display: flex;
+    align-items: flex-start !important;
+    width: 80% !important;
+    // margin-left: 40px;
+  }
+  
+  .even {
+    display: flex;
+    width: 80% !important;
+    align-items: flex-end !important;
+    // margin-right: 40px;
+  }
+}
+
+.odd {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
+.even {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}

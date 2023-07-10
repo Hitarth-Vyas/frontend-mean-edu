@@ -1,0 +1,16 @@
+.section {
+  display: block;
+}
+
+.contact .info-box {
+  padding: 28px 20px;
+  width: 95%;
+  margin-bottom: 10px;
+  background-color: f9fffa;
+}
+
+@media screen and (min-width: 768px) {
+  .info-box {
+    margin-left: 15px !important;
+  }
+}

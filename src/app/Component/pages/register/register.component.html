@@ -1,0 +1,214 @@
+<app-header></app-header>
+
+<img
+  src="../../../../assets/registeration/registeration.jpeg"
+  alt=""
+  class="w-100"
+  height="600px"
+/>
+
+<div>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+    <div class="form-floating my-3" style="width: 50%; margin: auto">
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Name"
+        formControlName="name"
+        [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+      />
+      <label for="name">Name</label>
+      <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+        <div *ngIf="f['name'].errors['required']">name is required</div>
+      </div>
+    </div>
+
+    <div class="form-floating mb-3" style="width: 50%; margin: auto">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+      />
+      <label for="floatingInput">Email address</label>
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors['required']">Email is required</div>
+        <div *ngIf="f.email.errors['email']">
+          Email must be a valid email address
+        </div>
+        <!-- <div
+          *ngIf="
+            uniqueemailerror &&
+            !f.email.errors['required'] &&
+            !f.email.errors['email']
+          "
+        >
+          Email already exist
+        </div> -->
+      </div>
+    </div>
+
+    <div class="form-floating mb-3" style="width: 50%; margin: auto">
+      <input
+        type="tel"
+        class="form-control"
+        id="pnum"
+        placeholder="92233449999"
+        formControlName="phoneNumber"
+        [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }"
+      />
+      <label for="pnum">Phone Number</label>
+      <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+        <div *ngIf="f.phoneNumber.errors['required']">
+          Phone number is required
+        </div>
+        <div
+          *ngIf="
+            f.phoneNumber.errors['minlength'] ||
+            f.phoneNumber.errors['maxlength'] ||
+            f.phoneNumber.errors['pattern']
+          "
+        >
+          Phone number must be 10 numbers
+        </div>
+      </div>
+    </div>
+
+    <div class="form-floating mb-3 row" style="width: 50%; margin: auto">
+      <!-- <div class="col-md-1"></div> -->
+
+      <mat-card class="col-md-5 mb-2">
+        <mat-card-title style="font-weight: 500">Gender</mat-card-title>
+        <div>
+          <input
+            id="male"
+            type="radio"
+            value="male"
+            name="gender"
+            formControlName="gender"
+            [ngClass]="{ 'is-invalid': submitted && f.gender.errors }"
+          />
+          <label for="male">Male</label>
+        </div>
+        <div>
+          <input
+            id="female"
+            type="radio"
+            value="female"
+            name="gender"
+            formControlName="gender"
+            [ngClass]="{ 'is-invalid': submitted && f.gender.errors }"
+          />
+          <label for="female">Female</label>
+          <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+            <div *ngIf="f.gender.errors['required']">Gender is required</div>
+          </div>
+        </div>
+      </mat-card>
+
+      <div class="col-md-1"></div>
+
+      <mat-card class="col-md-6 mb-1">
+        <mat-card-title style="font-weight: 500">Marital Status</mat-card-title>
+        <div>
+          <input
+            id="single"
+            type="radio"
+            value="single"
+            name="mstatus"
+            formControlName="mstatus"
+            [ngClass]="{ 'is-invalid': submitted && f.mstatus.errors }"
+          />
+          <label for="single">Single</label>
+        </div>
+        <div>
+          <input
+            id="married"
+            type="radio"
+            value="married"
+            name="mstatus"
+            formControlName="mstatus"
+            [ngClass]="{ 'is-invalid': submitted && f.mstatus.errors }"
+          />
+          <label for="married">Married</label>
+          <div *ngIf="submitted && f.mstatus.errors" class="invalid-feedback">
+            <div *ngIf="f.mstatus.errors['required']">
+              Marital Status is required
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+    <div class="form-floating mb-3 row" style="width: 50%; margin: auto">
+      <mat-form-field appearance="fill">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="dob" formControlName="dateOfBirth">
+        <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+        <mat-datepicker #dob></mat-datepicker>
+    
+        <mat-error *ngIf="submitted && f.dateOfBirth.errors" class="invalid-feedback">
+          <div
+            *ngIf="f.dateOfBirth.errors['required']"
+            style="font-size: x-small; margin: -24px auto;"
+          >
+            Date of Birth is required
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-floating mb-3 d-flex" style="width: 50%; margin: auto">
+      <input
+        type="tel"
+        class="form-control"
+        id="pinc"
+        placeholder="110004"
+        formControlName="pinCode"
+        [ngClass]="{ 'is-invalid': submitted && f.pinCode.errors }"
+      />
+      <label for="pinc">PIN Code</label>
+      <div *ngIf="submitted && f.pinCode.errors" class="invalid-feedback">
+        <div *ngIf="f.pinCode.errors['required']">
+          PIN is required
+        </div>
+        <div
+          *ngIf="
+            f.pinCode.errors['minlength'] ||
+            f.pinCode.errors['maxlength'] ||
+            f.pinCode.errors['pattern']
+          "
+        >
+          PIN must be 6 digits
+        </div>
+      </div>
+    </div>
+
+    <div class="form-floating mb-3" style="width: 50%; margin: auto">
+      <mat-form-field>
+        <mat-label>Current Status</mat-label>
+        <mat-select
+          class="custom-select"
+          formControlName="designation"
+          [ngClass]="{ 'is-invalid': submitted && f.designation.errors }"
+        >
+          <mat-option *ngFor="let dns of Designation" [value]="dns">
+            {{ dns }}
+          </mat-option>
+        </mat-select>
+        <!-- <div *ngIf="submitted && f.designation.errors" class="invalid-feedback">
+          <div *ngIf="f.designation.errors['required']">Current Status is required</div>
+        </div> -->
+      </mat-form-field>
+    </div>
+
+    <button class="d-flex justify-content-center mx-auto mb-4 py-2 px-3 reg-but btn-rounded">
+      <a class="nav-link" type="submit"><h5 class="mb-0 reg-text">REGISTER</h5></a>
+    </button>
+  </form>
+</div>
+
+<app-footer></app-footer>

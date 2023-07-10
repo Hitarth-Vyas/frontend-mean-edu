@@ -1,0 +1,191 @@
+<app-header></app-header>
+<mdb-carousel
+  [controls]="true"
+  [indicators]="true"
+  style="margin-top: 2rem !important"
+>
+  <mdb-carousel-item>
+    <a href="courses">
+      <img
+        src="../../../../assets/home_img/discover-yourself.jpg"
+        height="650"
+        class="d-block w-100"
+        alt="..."
+    /></a>
+    <!-- <div class="carousel-caption d-flex flex-wrap justify-content-between" style="background-color: antiquewhite;">
+      <h1 style="color: #343636; padding-left: 50px;">Course-1</h1>
+      <button class="d-flex mx-5 py-2 px-3" style="border: 2px solid black; background-color: coral; border-radius: 10px;">
+        <a class="nav-link" routerLink="/register"><h4 class="mb-0 text-dark">Register</h4></a>
+      </button>
+    </div> -->
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <a href="courses"
+      ><img
+        src="../../../../assets/home_img/invite.png"
+        height="650"
+        class="d-block w-100"
+        alt="..."
+    /></a>
+    <div
+      class="carousel-caption d-flex flex-row-reverse"
+      style="top: 0; margin-top: 6rem"
+    >
+      <h1 style="color: #343636; font-weight: 800; font-size: 50px !important">
+        INVITE US
+      </h1>
+      <!-- <button class="d-flex mx-5 py-2 px-3" style="border: 2px solid black; background-color: coral; border-radius: 10px;">
+        <a class="nav-link" routerLink="/register"><h4 class="mb-0 text-dark">Register</h4></a>
+      </button> -->
+    </div>
+  </mdb-carousel-item>
+</mdb-carousel>
+
+<div class="d-flex justify-content-center my-5">
+  <div class="card mb-3 mx-auto" style="width: 99%">
+    <div class="row g-0">
+      <div class="col-lg-6 my-auto">
+        <img
+          src="../../../../assets/tvv_intro/discussion.jpg"
+          alt="tvv"
+          class="img-fluid rounded-start"
+        />
+      </div>
+      <div class="col-lg-6 my-auto">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-5" style="font-size: 30px">
+            Explore the Dimension of TheVedaVerse
+          </h2>
+          <p class="card-text" style="text-align: justify; font-size: 16px">
+            Let's explore the whole new dimension of Vedic science, philosophy &
+            culture in a structured way by systematically imparting knowledge,
+            wisdom, values, and practices to enable individuals to lead
+            principle-centered life and offer practical holistic services to
+            modern society. With intellectuals of IIT, NIT, IIIT, and various
+            prominent institutes, universities, and organizations, who have been
+            reading and researching collective knowledge of multiple scriptures
+            and modern scientific research, we are growing towards an global
+            community.
+          </p>
+          <p class="card-text" style="text-align: justify; font-size: 16px">
+            The core essence of TheVedaVerse based on that it is basic to zero
+            in on character improvement in the public eye as an important
+            initial move towards progressing as a group, and as a civilization.
+            Now we decided to share all this invaluable knowledge with the world
+            through our talks and sessions in schools, colleges, universities,
+            etc. & online through live as well as recorded sessions & social
+            media.
+          </p>
+          <!-- <p class="card-text">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background-color: aliceblue; margin-bottom: 30px">
+  <h1
+    class="d-flex justify-content-center pt-4"
+    style="font-weight: 500; font-size: 50px"
+  >
+    OUR OBJECTIVES
+  </h1>
+  <div class="d-flex flex-wrap justify-content-evenly">
+    <div *ngFor="let purpose of purposes">
+      <div class="card m-3" style="width: 15rem; height: 15rem">
+        <div class="card-body">
+          <img
+            class="card-img-top"
+            src="{{ purpose.url }}"
+            alt="Card image cap"
+            height="120px"
+          />
+          <h3 class="card-title text-center">{{ purpose.content }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="videos" *ngFor="let vid of sanitizedVideos; let i = index">
+  <iframe [src] = "vid"  style='min-width: 30%; height: 315px' allowfullscreen>
+  </iframe>
+</div> -->
+
+<div style="background-color: #fefff0; margin-bottom: 30px">
+  <h1
+    class="d-flex justify-content-center pt-4"
+    style="font-weight: 500; font-size: 50px"
+  >
+    FEATURES
+  </h1>
+  <div
+    class="d-flex flex-column"
+    *ngFor="let feature of features; let evenItem = even; let oddItem = odd"
+    [class.even]="evenItem"
+    [class.odd]="oddItem"
+  >
+    <div class="card mb-3" style="width: 60%">
+      <div class="card-body text-center">
+        <i class="{{ feature.icon }}" style="margin-right: 5px"></i>
+        {{ feature.content }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background-color: #ceffff">
+  <h1
+    class="d-flex justify-content-center pt-4"
+    style="font-weight: 500; font-size: 50px"
+  >
+    EPITOME SHIFT
+  </h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" style="background-color: #ff8b76">
+          <h2 class="d-flex justify-content-center mb-0">Before</h2>
+        </th>
+        <th scope="col" style="background-color: cornflowerblue">
+          <h2 class="d-flex justify-content-center mb-0">After</h2>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-primary" *ngFor="let s of switch">
+        <td style="background-color: #f1cac3">
+          <p class="text-center">{{ s.before }}</p>
+        </td>
+        <td style="background-color: #c7d7f5">
+          <p class="text-center">{{ s.after }}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="my-4" style="background-color: #fdfbf0;">
+  <h1
+    class="d-flex justify-content-center pt-4"
+    style="font-weight: 500; font-size: 50px"
+  >
+    FAQs
+  </h1>
+  <mdb-accordion [borderless]="true">
+    <mdb-accordion-item
+      *ngFor="let f of faqs"
+      style="border: 2px solid blue"
+      class="m-2"
+    >
+      <ng-template mdbAccordionItemHeader>{{ f.question }}</ng-template>
+      <ng-template mdbAccordionItemBody>
+        {{ f.answer }}
+      </ng-template>
+    </mdb-accordion-item>
+  </mdb-accordion>
+</div>
+
+<app-footer></app-footer>

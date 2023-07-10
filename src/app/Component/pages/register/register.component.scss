@@ -1,0 +1,26 @@
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: -2px;
+}
+
+.reg-text {
+  color: white;
+  font-weight:500; 
+  font-size: 16px;
+}
+
+.reg-but {
+  border: none;
+  // background-color: #f5571d;
+  background-color: #1d6df5;
+  width: 40%;
+  border: 2px solid white;
+  // border-radius: 15px 5px;
+  box-shadow: rgb(0 0 0 / 35%) 0px 1px 10px 0px;
+}

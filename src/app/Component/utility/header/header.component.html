@@ -1,0 +1,56 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+  <div class="container-fluid fixed-top" style="background-color: antiquewhite;">
+    <img src="../../../../assets/tvv_logo.png" alt="tvv_logo" width="70" height="50" class="my-1 mx-5">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+          <a class="nav-op" routerLinkActive="nav-act" [routerLinkActiveOptions]="{ exact: true }" routerLink="/home">Home</a>
+          <a class="nav-op" routerLinkActive="nav-act" routerLink="/courses">Courses</a>
+          <a class="nav-op" routerLinkActive="nav-act" routerLink="/contact">Contact Us</a>
+      </div>
+    </div>
+    <button class="d-flex mx-5 py-2 px-3 reg-but">
+      <a class="nav-link" routerLink="/register"><h5 class="mb-0 reg-text">REGISTER</h5></a>
+    </button>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <img src="../../../../assets/tvv_logo.png" alt="tvv_logo" width="70" height="50" class="my-1 mx-5">
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="togglerSecondExample.toggle()"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarTogglerDemo02"
+      mdbCollapse
+      #togglerSecondExample="mdbCollapse"
+    >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
+        <li class="nav-item">
+          <a class="nav-op" routerLinkActive="nav-act" [routerLinkActiveOptions]="{ exact: true }" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-op" routerLinkActive="nav-act" routerLink="/courses">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-op" routerLinkActive="nav-act" routerLink="/contact">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+    <button class="d-flex mx-5 py-2 px-3 reg-but">
+      <a class="nav-link" routerLink="/register"><h5 class="mb-0 reg-text">REGISTER</h5></a>
+    </button>
+  </div>
+</nav>
